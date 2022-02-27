@@ -191,7 +191,13 @@ abstract public class ShapeElement extends RenderableElement
         Paint strokePaint = null;  //Default is to stroke with none
         if (getStyle(styleAttrib.setName("stroke")))
         {
-            if (styleAttrib.getStringValue().equals("none")) strokePaint = null;
+            if (
+                    styleAttrib.getStringValue().equals("none")
+                    // Later versions of SVG allow "transparent" as a stroke,
+                    // which should be treated the same as "none".
+                 || styleAttrib.getStringValue().equals("transparent")
+            ) 
+                strokePaint = null;
             else
             {
                 strokePaint = handleCurrentColor(styleAttrib);

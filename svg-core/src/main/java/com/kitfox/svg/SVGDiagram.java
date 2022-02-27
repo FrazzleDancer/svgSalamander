@@ -45,6 +45,7 @@ import java.awt.geom.Rectangle2D;
 import java.io.Serializable;
 import java.net.URI;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.logging.Level;
@@ -125,6 +126,25 @@ public class SVGDiagram implements Serializable
         render(null, g);
     }
 
+    public Point2D getCenter(ShapeElement e) throws SVGException {
+        List<AffineTransform> xforms = new ArrayList<>();
+        for (SVGElement el = e.getParent(); el != null; el = el.getParent()) {
+            if (el instanceof TransformableElement) {
+                AffineTransform x = ((TransformableElement) el).getXForm();
+                if (x != null)
+                    xforms.add(x);
+            }
+        }
+        xforms.add(new AffineTransform(getRoot().viewXform));
+        Collections.reverse(xforms);
+        AffineTransform at = new AffineTransform();
+        for (AffineTransform t : xforms)
+            at.concatenate(t);
+        return at.transform(new Point2D.Double(
+                e.getBoundingBox().getCenterX(),
+                e.getBoundingBox().getCenterY()
+            ), null);
+    }
     /**
      * Searches thorough the scene graph for all RenderableElements that have
      * shapes that contain the passed point.

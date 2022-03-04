@@ -126,7 +126,7 @@ public class SVGDiagram implements Serializable
         render(null, g);
     }
 
-    public Point2D getCenter(ShapeElement e) throws SVGException {
+    public Point2D getCenter(RenderableElement e) throws SVGException {
         List<AffineTransform> xforms = new ArrayList<>();
         for (SVGElement el = e.getParent(); el != null; el = el.getParent()) {
             if (el instanceof TransformableElement) {

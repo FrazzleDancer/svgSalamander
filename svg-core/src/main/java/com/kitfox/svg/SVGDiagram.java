@@ -126,7 +126,13 @@ public class SVGDiagram implements Serializable
         render(null, g);
     }
 
-    public Point2D getCenter(RenderableElement e) throws SVGException {
+    /**
+     * Get the transform from a RenderableElement to its document frame.
+     * @param e a RenderableElement
+     * @return the AffineTransform that can be used to translate from the
+     * RenderableElement's coordinate system to the document's coordinate system.
+     */
+    public AffineTransform getTransform(RenderableElement e) {
         List<AffineTransform> xforms = new ArrayList<>();
         for (SVGElement el = e.getParent(); el != null; el = el.getParent()) {
             if (el instanceof TransformableElement) {
@@ -140,11 +146,9 @@ public class SVGDiagram implements Serializable
         AffineTransform at = new AffineTransform();
         for (AffineTransform t : xforms)
             at.concatenate(t);
-        return at.transform(new Point2D.Double(
-                e.getBoundingBox().getCenterX(),
-                e.getBoundingBox().getCenterY()
-            ), null);
+        return at;
     }
+    
     /**
      * Searches thorough the scene graph for all RenderableElements that have
      * shapes that contain the passed point.

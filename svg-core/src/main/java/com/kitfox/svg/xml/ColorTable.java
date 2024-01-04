@@ -83,6 +83,7 @@ public class ColorTable
         table.put("darkgoldenrod", new Color(0xb8860b));
         table.put("darkgray", new Color(0xa9a9a9));
         table.put("darkgreen", new Color(0x006400));
+        table.put("darkgrey", new Color(0xa9a9a9));
         table.put("darkkhaki", new Color(0xbdb76b));
         table.put("darkmagenta", new Color(0x8b008b));
         table.put("darkolivegreen", new Color(0x556b2f));
@@ -93,11 +94,13 @@ public class ColorTable
         table.put("darkseagreen", new Color(0x8fbc8f));
         table.put("darkslateblue", new Color(0x483d8b));
         table.put("darkslategray", new Color(0x2f4f4f));
+        table.put("darkslategrey", new Color(0x2f4f4f));
         table.put("darkturquoise", new Color(0x00ced1));
         table.put("darkviolet", new Color(0x9400d3));
         table.put("deeppink", new Color(0xff1493));
         table.put("deepskyblue", new Color(0x00bfff));
         table.put("dimgray", new Color(0x696969));
+        table.put("dimgrey", new Color(0x696969));
         table.put("dodgerblue", new Color(0x1e90ff));
         table.put("feldspar", new Color(0xd19275));
         table.put("firebrick", new Color(0xb22222));
@@ -111,6 +114,7 @@ public class ColorTable
         table.put("gray", new Color(0x808080));
         table.put("green", new Color(0x008000));
         table.put("greenyellow", new Color(0xadff2f));
+        table.put("grey", new Color(0x808080));
         table.put("honeydew", new Color(0xf0fff0));
         table.put("hotpink", new Color(0xff69b4));
         table.put("indianred", new Color(0xcd5c5c));
@@ -125,12 +129,15 @@ public class ColorTable
         table.put("lightcoral", new Color(0xf08080));
         table.put("lightcyan", new Color(0xe0ffff));
         table.put("lightgoldenrodyellow", new Color(0xfafad2));
-        table.put("lightgrey", new Color(0xd3d3d3));
+        table.put("lightgray", new Color(0xd3d3d3));
         table.put("lightgreen", new Color(0x90ee90));
+        table.put("lightgrey", new Color(0xd3d3d3));
         table.put("lightpink", new Color(0xffb6c1));
         table.put("lightsalmon", new Color(0xffa07a));
         table.put("lightseagreen", new Color(0x20b2aa));
         table.put("lightskyblue", new Color(0x87cefa));
+        table.put("lightslategray", new Color(0x778899));
+        table.put("lightslategrey", new Color(0x778899));
         table.put("lightslateblue", new Color(0x8470ff));
         table.put("lightslategray", new Color(0x778899));
         table.put("lightsteelblue", new Color(0xb0c4de));
@@ -185,6 +192,7 @@ public class ColorTable
         table.put("skyblue", new Color(0x87ceeb));
         table.put("slateblue", new Color(0x6a5acd));
         table.put("slategray", new Color(0x708090));
+        table.put("slategrey", new Color(0x708090));
         table.put("snow", new Color(0xfffafa));
         table.put("springgreen", new Color(0x00ff7f));
         table.put("steelblue", new Color(0x4682b4));
